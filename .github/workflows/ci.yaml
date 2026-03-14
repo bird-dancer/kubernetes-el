@@ -57,6 +57,7 @@ jobs:
           make test
 
       - name: Upload Coverage Fixtures
+        if: matrix.emacs_version == 30.2
         uses: actions/upload-artifact@v7
         with:
           name: coverage-artifacts
