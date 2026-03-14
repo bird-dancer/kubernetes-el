@@ -45,7 +45,6 @@
       ,(when completion-time
          `(key-value 12 "Completed" ,completion-time))
       (padding)
-      (padding)
 
       (section (pod nil)
                (heading "Pod")
