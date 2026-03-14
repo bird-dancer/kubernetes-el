@@ -18,7 +18,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: coverage-artifacts
-          fail_ci_if_error: true
+          path: ./coverage
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
 
