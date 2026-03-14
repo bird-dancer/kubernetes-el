@@ -18,6 +18,9 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: coverage-artifacts
+          fail_ci_if_error: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v5
