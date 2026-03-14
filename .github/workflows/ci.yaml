@@ -56,15 +56,12 @@ jobs:
         run: |
           make test
 
-      - name: Upload coverage
-        if: steps.install.outcome == 'success' && steps.install.conclusion == 'success'
-        uses: codecov/codecov-action@v5
+      - name: Upload Coverage Fixtures
+        uses: actions/upload-artifact@v7
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          env_vars: EMACS_VERSION
-          files: ./coverage/lcov-ert.info,./coverage/lcov-buttercup.info
-          fail_ci_if_error: true
-          verbose: true
+          name: coverage-artifact
+          path: ./coverage
+
 
   test-against-emacs-snapshot-release:
     runs-on: ubuntu-latest
